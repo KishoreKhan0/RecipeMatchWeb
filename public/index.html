@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="RecipeMatch is a full-stack recipe discovery app with XML validation, MongoDB persistence, Express APIs, and ingredient-based recipe matching."
+    />
+    <title>RecipeMatch | Smart Recipe Discovery</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav" aria-label="Main navigation">
+        <div class="brand">
+          <img src="images/Recipe.jpg" alt="RecipeMatch logo" class="brand-logo" />
+          <div>
+            <p class="eyebrow">XML + MongoDB + Express</p>
+            <h1>RecipeMatch</h1>
+          </div>
+        </div>
+        <button id="toggleTheme" class="ghost-button" type="button">🌙 Dark Mode</button>
+      </nav>
+
+      <section class="hero-content">
+        <div>
+          <p class="eyebrow">Smart culinary assistant</p>
+          <h2>Find recipes by ingredients, calories, and dietary tags.</h2>
+          <p>
+            Browse a validated recipe dataset, filter by nutrition preferences, and rank meals by the
+            ingredients you already have.
+          </p>
+        </div>
+        <div class="hero-card" aria-label="Project highlights">
+          <span id="recipeCount">161</span>
+          <p>validated recipes available</p>
+        </div>
+      </section>
+    </header>
+
+    <main class="page-shell">
+      <section class="controls" aria-labelledby="filters-title">
+        <div>
+          <p class="eyebrow">Search & match</p>
+          <h2 id="filters-title">Recipe filters</h2>
+        </div>
+
+        <div class="control-grid">
+          <label>
+            Search recipes
+            <input id="searchInput" type="search" placeholder="e.g. curry, pasta, avocado" />
+          </label>
+
+          <label>
+            Filter by tag
+            <select id="tagFilter">
+              <option value="">All tags</option>
+            </select>
+          </label>
+
+          <label>
+            Ingredients you have
+            <input id="ingredientInput" type="text" placeholder="tomato, tofu, rice" />
+          </label>
+        </div>
+
+        <label class="calorie-control">
+          <span>Maximum calories: <strong id="calorieLabel">1000</strong></span>
+          <input id="calorieRange" type="range" min="0" max="1000" value="1000" step="50" />
+        </label>
+      </section>
+
+      <section class="status-row" aria-live="polite">
+        <p id="statusText">Loading recipes…</p>
+        <button id="clearFilters" class="secondary-button" type="button">Clear filters</button>
+      </section>
+
+      <div id="loader" class="loader" aria-hidden="true"></div>
+      <section id="recipes" class="recipe-grid" aria-label="Recipe results"></section>
+    </main>
+
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-box">
+        <button id="closeModal" class="modal-close" type="button" aria-label="Close recipe details">×</button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Made with MongoDB, Express, XML/RelaxNG, Python, and vanilla JavaScript.</p>
+      <p>RecipeMatch portfolio project · 2026</p>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

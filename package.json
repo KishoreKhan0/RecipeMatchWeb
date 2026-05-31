@@ -1,0 +1,29 @@
+{
+  "name": "recipematch-web",
+  "version": "1.0.0",
+  "description": "Full-stack recipe discovery app with XML/RelaxNG validation, MongoDB import, Express APIs, and ingredient-based matching.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "validate:data": "python scripts/validate_recipes.py",
+    "import:recipes": "python scripts/import_recipes.py"
+  },
+  "keywords": [
+    "express",
+    "mongodb",
+    "xml",
+    "relaxng",
+    "recipe-search",
+    "portfolio-project"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongodb": "^6.17.0"
+  }
+}

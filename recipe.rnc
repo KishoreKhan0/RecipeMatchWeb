@@ -1,0 +1,29 @@
+namespace xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+start = element recipes { recipe+ }
+recipe =
+  element recipe {
+    element title { text },
+    element calories { xsd:integer },
+    element prepTime { xsd:integer },
+    element cookTime { xsd:integer },
+    element servings { xsd:integer },
+    ingredients,
+    preparationSteps,
+    tags
+  }
+ingredients = element ingredients { ingredient+ }
+ingredient =
+  element ingredient {
+    element name { text },
+    element quantity { xsd:decimal },
+    element unit { text }
+  }
+preparationSteps = element preparationSteps { step+ }
+step =
+  element step {
+    attribute number { xsd:integer },
+    text
+  }
+tags = element tags { tag+ }
+tag = element tag { text }

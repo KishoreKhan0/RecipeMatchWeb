@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <start>
+    <element name="recipes">
+      <oneOrMore>
+        <ref name="recipe"/>
+      </oneOrMore>
+    </element>
+  </start>
+  <define name="recipe">
+    <element name="recipe">
+      <element name="title">
+        <text/>
+      </element>
+      <element name="calories">
+        <data type="integer"/>
+      </element>
+      <element name="prepTime">
+        <data type="integer"/>
+      </element>
+      <element name="cookTime">
+        <data type="integer"/>
+      </element>
+      <element name="servings">
+        <data type="integer"/>
+      </element>
+      <ref name="ingredients"/>
+      <ref name="preparationSteps"/>
+      <ref name="tags"/>
+    </element>
+  </define>
+  <define name="ingredients">
+    <element name="ingredients">
+      <oneOrMore>
+        <ref name="ingredient"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="ingredient">
+    <element name="ingredient">
+      <element name="name">
+        <text/>
+      </element>
+      <element name="quantity">
+        <data type="decimal"/>
+      </element>
+      <element name="unit">
+        <text/>
+      </element>
+    </element>
+  </define>
+  <define name="preparationSteps">
+    <element name="preparationSteps">
+      <oneOrMore>
+        <ref name="step"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="step">
+    <element name="step">
+      <attribute name="number">
+        <data type="integer"/>
+      </attribute>
+      <text/>
+    </element>
+  </define>
+  <define name="tags">
+    <element name="tags">
+      <oneOrMore>
+        <ref name="tag"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="tag">
+    <element name="tag">
+      <text/>
+    </element>
+  </define>
+</grammar>

@@ -2,13 +2,6 @@
 
 RecipeMatch is a full-stack recipe discovery application built around a validated XML data pipeline. It combines a Python XML/RelaxNG import workflow, MongoDB persistence, an Express API, and a responsive vanilla JavaScript frontend with recipe search, dietary filters, calorie filtering, and ingredient-based matching.
 
-## Highlights
-
-- Validated recipe data pipeline using XML, RelaxNG schema validation, Python, and MongoDB upserts.
-- Express API with health checks, tag discovery, recipe filtering, and ingredient-match ranking.
-- Responsive frontend with search, tag filters, calorie range filtering, dark mode, recipe details modal, loading/error states, and safe DOM rendering.
-- Local JSON fallback so the demo still works even when MongoDB is not running.
-- Clean portfolio-ready repository structure with setup scripts, `.gitignore`, `.env.example`, and documented commands.
 
 ## Tech Stack
 
@@ -163,26 +156,3 @@ The XML dataset has been normalized so that every recipe includes:
 - at least one tag
 
 Dietary tags are also normalized to avoid obvious contradictions such as a recipe being marked vegan while containing meat, fish, egg, or dairy ingredients. The demo data has also been curated so recipe titles, ingredients, and preparation steps are more realistic for portfolio review.
-
-## Portfolio / CV Angle
-
-This project is useful as a resume item because it is not only a static frontend. It demonstrates:
-
-- full-stack API design with Express and MongoDB,
-- structured data engineering using XML and RelaxNG validation,
-- Python-based ETL/import workflow,
-- frontend state management and responsive UI implementation,
-- practical fallback/error handling for a smoother demo experience.
-
-Suggested CV bullets:
-
-```latex
-\item{
-\textbf{RecipeMatch Web -- Full-Stack Recipe Discovery \& XML Data Pipeline} \hfill \textit{2026} \\
-- Built a full-stack recipe discovery app with an Express API, MongoDB persistence, responsive JavaScript frontend, search/filter controls, calorie filtering, dark mode, and ingredient-based recipe matching.
-
-- Designed a validated XML data pipeline using RelaxNG schemas and Python import scripts to normalize recipe data, enforce schema consistency, create MongoDB indexes, and upsert structured recipe documents.
-
-- Improved production readiness with API health checks, local JSON fallback data, clean repository structure, environment-based configuration, documented setup commands, and safe frontend DOM rendering.
-}
-```
